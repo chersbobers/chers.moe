@@ -21,13 +21,24 @@
         }
 
         h1, h2, h5, h6, p {
-            margin: 10px 0; /* Reduce the margins between the text elements */
+            margin: 10px 0;
         }
 
         .bottom-image {
             width: 200px;
             height: 200px;
-            margin: 10px auto 0; /* Reduce margin around the image */
+            margin: 10px auto 0;
+        }
+
+        .note {
+            display: none;
+            font-size: 0.8em;
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .show-note:hover + .note {
+            display: block;
         }
     </style>
 </head>
@@ -35,7 +46,8 @@
     <h1>Hello</h1>
     <h2>I am the definition of unemployed</h2>
     <p>I made like <a href="https://github.com/chersbobers/toolybot">toolybot</a> also I made nvidia and this stupid <a href="https://chersbobers.codeberg.page/coolcats/">fishing game</a></p>
-    <h6>note I did not make nvidia</h6>
+    <span class="show-note">nvidia</span>
+    <div class="note">note I did not make nvidia</div>
     <h5><a href="https://www.youtube.com/@PippyOC">Subscribe to Pippyoc</a></h5>
     <h5><a href="https://pippydc.chersbobers.com">join pippys discord server</a></h5>
     <div class="bottom-image">
