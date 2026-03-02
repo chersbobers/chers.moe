@@ -6,41 +6,201 @@
     <title>Chers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            text-align: center;
+        *,
+        *::before,
+        *::after {
             margin: 0;
-            padding-bottom: 220px;
-            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #191724;
+            --fg: #e0def4;
+            --fg-muted: #908caa;
+            --link: #ebbcba;
+            --link-hover: #f6c177;
+            --border: #403d52;
+            --code-bg: #26233a;
+            --mono: "IBM Plex Mono", "Courier New", monospace;
+            --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--fg-muted);
+        }
+
+        ::selection {
+            background: #c4a7e7;
+            color: #191724;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            scrollbar-color: var(--border) var(--bg);
+            scrollbar-width: thin;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .site-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .site-header .subtitle {
+            font-size: 0.875rem;
+            color: var(--fg-muted);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .site-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 0.15rem;
+            line-height: 1.1;
         }
 
         a {
-            color: #1a0dab;
+            color: var(--link);
             text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
-        h1, h2, h5, h6, p {
-            margin: 10px 0;
+        a:hover {
+            color: var(--link-hover);
         }
 
-        .bottom-image {
-            width: 200px;
-            height: 200px;
-            margin: 10px auto 0;
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        ul.features {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.features li {
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.6;
+            margin-bottom: 0.25rem;
+        }
+
+        ul.features li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #31748f;
+        }
+
+        code {
+            font-family: var(--mono);
+            font-size: 0.875rem;
+            background: var(--code-bg);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+        }
+
+        .gallery {
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            max-width: 200px;
+            height: auto;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: border-color 0.2s;
+        }
+
+        .gallery img:hover {
+            border-color: var(--link);
+        }
+
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-top: 2.5rem;
+            font-size: 0.875rem;
+            color: var(--fg-muted);
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 2rem 1rem 3rem;
+            }
+            .site-header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hello</h1>
-    <h2>I am the definition of unemployed</h2>
-    <p>I made like <a href="https://github.com/chersbobers/toolybot">toolybot</a> also I made nvidia no I didnt and this stupid <a href="https://chersbobers.codeberg.page/coolcats/">fishing game</a></p>
-    
-    <h5><a href="https://www.youtube.com/@PippyOC">Subscribe to Pippyoc</a></h5>
-    <h5><a href="https://pippydc.chersbobers.com">join pippys discord server</a></h5>
-    <div class="bottom-image">
-        <img src="https://files.catbox.moe/qokjqo.jpg" alt="Image" style="width: 100%; height: 100%; obect-fit: cover;">
+    <div class="page">
+        <header class="site-header">
+            <p class="subtitle">I am the definition of unemployed</p>
+            <h1>Hello</h1>
+        </header>
+
+        <section>
+            <h3>Projects</h3>
+            <p>I build stupid things like <strong><a href="https://github.com/chersbobers/booly">booly</a></strong> (a Discord bot) and <strong><a href="https://github.com/chersbobers/yawdl">yawdl</a></strong> (Yet Another Web Development Language) its real bad though.</p>
+        </section>
+
+        <section>
+            <h3>Socials & Links</h3>
+            <ul class="features">
+                <li>Check out my <a href="https://github.com/chersbobers">GitHub</a>/<a href="https://codeberg.org/chersbobers">Codeberg</a> for more code</li>
+                <li>Find me on <a href="https://reddit.com/u/chersbobers">Reddit</a> (where I post photos of my cat Noodle)</li>
+                <li><a href="https://www.youtube.com/@PippyOC">Subscribe to Pippyoc</a></li>
+                <li><a href="https://pippydc.chersbobers.com">Join Pippy's Discord server</a></li>
+            </ul>
+        </section>
+
+        <div class="gallery">
+            <img src="https://files.catbox.moe/qokjqo.jpg" alt="Featured Image">
+        </div>
+
     </div>
 </body>
 </html>
-<!-- hidden comment to add this to git and i making this long to increase the increasing about increasing i cant speeeeel-->
